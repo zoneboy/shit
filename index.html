@@ -1,186 +1,725 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Predictionshop</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="predictionshop.css">
-	<!-- Icon Library to show Hamburger Menu on mobile -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content="Accurate Football Predictions. Insightful soccer prediction analysis, statistics, and team data. Most profitable soccer betting service">
+	<meta name="description" content="Free football prediction site. Consistent Winning betting tips, soccer predictions, statistics,  winning football tips and much more to help you win big everyday." />
+	<meta name="author" content="HeptaBet">
+	<title>Football Predictions - Football Prediction Site | HeptaBet</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* general styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  /*background-color: red;*/
+}
+
+
+
+/*NAVIGATION BAR*/
+[class*="col-"] {
+  float: left;
+  /*padding: 15px;*/
+  margin: 0;
+}
+
+/*For Desktop*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/*For mobile device*/
+/*For Desktop*/
+
+/*------Heading------*/
+.col-12 .header-logo {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1;
+	justify-content: center;
+}
+
+
+.navbar {
+  display: flex;
+  /*overflow: hidden;*/
+  background-color: #1A1F25;
+  font-family: Arial, Helvetica, sans-serif;
+  /*font-size: 16px;*/
+}
+
+
+.navbar a {
+  /*float: left;*/
+  flex: 1;
+  /*font-size: 16px;*/
+  color: white;
+  text-align: center;
+  padding: 0.875em 1em;
+  text-decoration: none;
+}
+
+.dropdown {
+  flex: 1;
+}
+
+
+
+.navbar a:hover {
+  background-color: #59796F;
+}
+
+.show {
+  display: block;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1A1F25;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+#mobile .openbtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #1A1F25;
+	border-radius: 5px;
+	color: #1A1F25;
+	background: rgba(0, 0, 0,0.0);
+	padding: 3px;
+	/*width: 5%;*/
+}
+
+#mobile h1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 50px;
+	margin-top: 5px;
+	transition: margin-left .5s;
+	/*display: block;*/
+	/*margin-bottom: 50px;*/
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  /*transition: margin-left .5s;*/
+ /* padding: 16px;
+  margin-top: 15px;*/
+}
+
+.hide {
+  display: none;
+}
+
+.hideous {
+  margin-left: 20px;
+}
+
+@media screen and (max-height: 450px) {
+		 /*.sidenav {margin-top: 150px;}*/
+	  .sidenav a {font-size: 18px;}
+	  #mobile h1 {
+		/*position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: 50px;
+		transition: margin-left .5s;*/
+		/*display: block;*/
+		margin-bottom: 50px;
+	}
+}
+
+#mobile {
+	display: none;
+}
+
+/*----Media Queries------*/
+@media screen and (max-width: 766px) {
+
+	.navbar, .col-12 h1.header-logo {
+		display: none;
+	}
+
+	#mobile {
+		display: block;
+	}
+	#main {
+		margin-top: 3em;
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+	.col-sm-1 {width: 8.33%;}
+	.col-sm-2 {width: 16.66%;}
+	.col-sm-3 {width: 25%;}
+	.col-sm-4 {width: 33.33%;}
+	.col-sm-5 {width: 41.66%;}
+	.col-sm-6 {width: 50%;}
+	.col-sm-7 {width: 58.33%;}
+	.col-sm-8 {width: 66.66%;}
+	.col-sm-9 {width: 75%;}
+	.col-sm-10 {width: 83.33%;}
+	.col-sm-11 {width: 91.66%;}
+	.col-sm-12 {width: 100%;}
+
+	[class*="col-"] {
+	  float: left;
+	  padding: 15px;
+	  margin: 0;
+	}
+	.col-sm-12 {
+		width: 100%;
+		/*float: left;*/
+  		padding: 10px;
+  		margin: 0;
+	}
+}
+span.col1 {
+	color: #1A1F25
+}
+span.col2 {
+	color: #59796F;
+}
+span.col3 {
+	color: #1F2A27;
+}
+
+header h1 a {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	/*width: 70%;*/
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 40pt;
+	font-style: italic;
+	
+}
+
+
+.white, .red {
+	flex: 100%;
+	padding: 30px 0 30px 20%;
+	line-height: 2;
+	font-size: 1.2em;
+}
+
+.red {
+	background: #1A1F25;
+  	color: white;
+}
+
+h3 {
+	font-size: 2em;
+	color: #1A1F25;
+}
+.white h1 a {
+	text-decoration: none;
+	color: white;
+}
+
+.white h1 {
+	text-align: center;
+	border: 1px solid red;
+	width: 50%;
+	background-color: red;
+	color: white;
+	margin-right: 5%;
+}
+.white p {
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 900px){
+	.white h1 {
+	text-align: center;
+	border: 1px solid red;
+	width: 80%;
+	background-color: red;
+	color: white;
+	margin-right: 5%;
+}
+	.white, .red {
+		padding: 30px 0 30px 10%;
+		line-height: 1.5;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	h3 {
+		font-size: 1.5rem;
+	}
+}
+
+#wrapper {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			display: flex;
+			justify-content: space-between;
+			margin: 5%;
+		}
+
+		.card {
+			background-color: #1A1F25;
+			margin: 3px;
+			width: 320px;
+			height: 426px;
+			flex: 0 0 auto;
+			border-radius: 30px 30px 30px 30px;
+			/*display: inline-block;*/
+		}
+
+		img {
+			width: 320px;
+			height: 213px;
+  		border-radius: 30px 30px 0 0;
+}
+
+
+
+/**/
+
+.element p {
+  font-size: 23px;
+  font-weight: 600;
+  padding: 20px 20px 0 20px;
+  color: white;
+}
+.element .tyu {
+  font-size: 1em;
+  font-weight: 100;
+  /*padding: 5px;*/
+}
+
+		::-webkit-scrollbar {
+    display: none;
+    /*height: 500px;*/
+}
+
+section#myFaq {
+  padding: 5%;
+  width: 100%;
+  display: block;
+  color: white;
+  background-color: #1A1F25;
+  align-items: center;
+  border-bottom: 10px solid #222222;
+}
+.faq {
+  text-align: center;
+}
+
+/*MY ACCORDION MY ACCORDION*/
+.myAccordion {
+    padding: 30px 0 0 0;
+    line-height: 2;
+    font-size: 1em;
+    /*background-color: orange;*/
+    color: white;
+}
+.accordion {
+  background-color: #303030;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 60%;
+  border: none;
+  text-align: left;
+  outline: none;
+  /*font-size: 1.5em;*/
+  transition: 0.4s;
+  border-bottom: 1.5px solid black;
+}
+.active, .accordion:hover {
+  background-color: #303030;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  /*margin-left: 500px;*/
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  background-color: #303030;
+  max-height: 0;
+  text-align: left;
+  padding:0 3%;
+  line-height: 1.5em;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 60%;
+  /*font-size: 1.5em;*/
+  transition: max-height 0.2s ease-out;
+}
+
+/*END OF MYACCORDION*/
+	</style>
 </head>
 <body>
-	<header class="col-12">
+
+		<header class="col-12">
 		<h1 class="header-logo"><a href="#">
-		<span class="col1">Hepta</span><span class="col2">Bet</span><span class="col3">.com</span></a></h1>
+		<span class="col1">Hepta</span><span class="col2">Bet</span></a></h1>
 		<nav class="navbar">
-				<a href="#">Home</a>	
-				<a href="third.html">Buy Tips</a>
-				<a href="#">FAQ</a>
-				<a href="#">Tips History</a>
-				<a href="#">Contact</a>
+				<a href="index.html">Home</a>	
+				<a href="#wrapper">Buy Tips</a>
+				<a href="#myFaq">FAQ</a>
+				<a href="maintenance.html">Tips History</a>
+				<a href="maintenance.html">Contact</a>
 			
 		</nav>
 	</header>
 	<header id="mobile">
 		<h1 id="mobile_header"><a href="#">
-		<span class="col1">Hepta</span><span class="col2">Bet</span><span class="col3">.com</span></a></h1>
+		<span class="col1">Hepta</span><span class="col2">Bet</span></a></h1>
 		<span style="font-size:30px;cursor:pointer" class="openbtn" onclick="openNav()">&#9776;</span>
 		<div id="mySidenav" class="sidenav">
-			<h1>HEADER LOGO</h1>
+			<!-- <h1>HEADER LOGO</h1> -->
 		    <a href="javascript:void(0)" class="closebtn" id="myClose" onclick="closeNav()">&times;</a>
-		    <a href="#">Home</a>	
-				<a href="third.html">Buy Tips</a>
-				<a href="#">FAQ</a>
-				<a href="#">Tips History</a>
-				<a href="#">Contact</a>
+		    <a href="index.html">Home</a>	
+				<a href="#wrapper">Buy Tips</a>
+				<a href="#myFaq">FAQ</a>
+				<a href="maintenance.html">Tips History</a>
+				<a href="maintenance.html">Contact</a>
 	  	</div>	
 	</header>
-	<div id ="main" class="row">
-		<div class="left">
-			<div class="first">
-			<div class="mainlogo"><span>The Zoneboy Shop</span>
-				<div class="text">
-					We're proud to announce that all the expert bettors choose us, why ? 
-					Because our predictions never dissapoint and and our pricing is 
-					more than fair. Get predictions more powerful and more accurate than ever before.
-				</div>
-				<a href="#"><h2>Buy Today's Tip</h2></a>
-			</div>
-			<span class="smalllogo">
-				<ul>
-					<li><a href="#"><img src="1.png"><strong>Strong Win-Rate</strong> We aim at a over 84% win-rate</a></li>
-					<li><a href="#"><img src="2.PNG"><strong>Secure Payments</strong> <br> Use our most secured payment methods</a></li>
-					<li class="last"><a href="#"><img src="3.PNG"><strong>Have Questions?</strong> We provide 24/7/365 fast support</a></li>
-				</ul>	
-			</span>
-				<div class="divider"></div>
-			<table width="100%" cellpadding="1" margin="0" cellspacing="0">
-				<thead>
-					<tr>
-						<th>Date</th>
-						<th>Opponents</th>
-						<th>League</th>
-						<th>Conclusion</th>
-						<th>Prediction</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><a href="#">Buy now</a></td>
-						<td><a href="#">Buy Today's Tip</a></td>
-						<td><a href="#">Buy now</a></td>
-						<td><a href="#">Buy Today's Tip</a></td>
-						<td><a href="#">Buy now</a></td>
-					</tr>
-					<tr>
-						<td>12 Jun 2019</td>
-						<td>Arsenal vs Chelsea</td>
-						<td>	Switzerland: Challenge League</td>
-						<td>Won</td>
-						<td>Over 2.5 goals</td>
-					</tr>
-				</tbody>
 
-			</table>
-			<div class="divider2"></div>
-			</div>
-		</div>
-			<!-- <div class="second">
-			<div class="stop">
-				<h1>The One Stop Shop</h1>
-				<p>All of the expert bettors are calling us "The One Stop Shop" You know why we are called the "One Stop Shop" ? Because after you get our predictions you will not need anyones advice anymore. You just get our prediction daily, bet and watch the bookies cry. At the prediction shop you will get a fair price for predictions more powerful and more accurate than ever before.</p><br>
-				<p>What's even more better about the prediction shop is that 88% of tips 
-				you receive are from major European Leagues, that means good odds, big profits and excellent games !</p><br>
-				<p>Make a good decision for your betting future and buy your first tip from the prediction shop today.</p>
-			</div>
-			<div class="divider2"></div>
-			<div class="bets">
-				<img src="1.jpg">
-				<img src="2.jpg">
-				<img src="3.jpg">
-				<img src="4.jpg">
-				<img src="5.jpg">
-			</div>
-			<div class="divider2"></div>
-		 	</div> -->
-		<!-- </div> -->
-		<div class="right">
-			<div class="sidebar1"><h1>Today's Tip</h1><strong><span>&euro;165</span>/ 1 tip</strong><br>Check Your Mail
-				<a href="#"><h2>Buy Today's Tip</h2></a>
-				<ul>
-					<li><img src="4.PNG">Tips have a high winning percentage</li>
-					<li><img src="4.PNG">88% of tips are from major European Leagues.</li>
-					<li><img src="4.PNG">Immediate access after payment</li>
-				</ul>
-			</div>
-			<div class="sidebar2"><span>Testimonials</span>
-				<p>Dionysios Angelos: <br>
-				"I'm not a serious punter but I am dead certain that 
-				if you continue winning like this, 
-				I'm going to have &euro;60,000 by the end of the year at a minimum."</p>
-				<div class="divider3"></div>
-				<p>Borislav Boyan: <br>
-				"I made &euro;15,000 in the first month of working with PredictionsShop. 
-				Now, I'm bringing in that much each WEEK. 
-				And it's all thanks to the predictions you're sending me. 
-				Keep them coming - you are making me very, very happy."</p>
-				<div class="divider3"></div>
-				<p>Cebrian Luciano: <br>
-				"When someone says they can accurately pick winners at an 84% rate, 
-				you think they're full of crap. When they actually do it, 
-				you think they must be possessed. 
-				So my only conclusion is that predictionshop must have made a deal with the devil. 
-				There's no logical explanation for this - you have literally made me rich."</p>
-				<div class="divider3"></div>
-			</div>
-			<div class="more"><img src="5.PNG"><a href="#">Read More</a></div>
-			<div class="sidebar1"><h1>1 PREMIUM TIP</h1><strong><span>&euro;499</span>/ 1 tip</strong><br>Replacement Included
-				<a href="#"><h2>Buy Today's Tip</h2></a>
-				<ul>
-					<li><img src="4.PNG">Tips have a high winning percentage</li>
-					<li><img src="4.PNG">88% of tips are from major European Leagues.</li>
-					<li><img src="4.PNG">Immediate access after payment</li>
-				</ul>
-			</div>
-		</div>
-		<div class="second">
-			<div class="stop">
-				<h1>The One Stop Shop</h1>
-				<p>All of the expert bettors are calling us "The One Stop Shop" You know why we are called the "One Stop Shop" ? Because after you get our predictions you will not need anyones advice anymore. You just get our prediction daily, bet and watch the bookies cry. At the prediction shop you will get a fair price for predictions more powerful and more accurate than ever before.</p><br>
-				<p>What's even more better about the prediction shop is that 88% of tips 
-				you receive are from major European Leagues, that means good odds, big profits and excellent games !</p><br>
-				<p>Make a good decision for your betting future and buy your first tip from the prediction shop today.</p>
-			</div>
-			<div class="divider2"></div>
-			<div class="bets">
-				<img src="1.jpg">
-				<img src="2.jpg">
-				<img src="3.jpg">
-				<img src="4.jpg">
-				<img src="5.jpg">
-			</div>
-			<div class="divider2"></div>
-		</div>	
-	</div>	
-	<!-- <div class="after"></div> -->
-	<footer>
-		<div class="foot">
+
+<main id="main">
+<div class="mainBox">
+	<section class="white">
+			<h3>High Winning Bets</h3>
+			<p>Our experienced football tipsters team ensure consistent winning football tips on a long term basis (High win rate and high Return On Investment (ROI). Our provided football tips are also played by the tipsters to give confidence to our members</p>
+			<h1><a href="">BUY TIPS</a></h1>
+		</section>
+<!-- 		<section class="red">
+			<h3>Skills</h3>
+			<p>Here are some of the technologies I enjoy writing day-to-day:</p>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Disclaimer</a></li>
-				<li><a href="#">Terms of Service</a></li>
-				<li><a href="#">Privacy Policy</a></li>
-				<li><a href="#">Help</a></li>
-				<li><a href="#">Contact</a></li>
-				<li>Designed by - Zoneboy</span></li>
+				<li>HTML & CSS</li>
+				<li>JavaScript</li>
+				<li>React</li>
+				<li>Solidity</li>
+				<li>Angular</li>
+				<li>and many more</li>
 			</ul>
-		</div>	
-	</footer>
-		
+		</section>
+		<section class="white">
+			<h3>How to Contact Me</h3>
+			<p>The easiest way to contact me is via twitter: <a target="_blank" href="https://twitter.com/iamtaofeek">@iamtaofeek</a></a></p>
+		</section> -->
+</div>
+	<table>
+  <caption>Latest Games</caption>
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Opponents</th>
+      <th scope="col">League</th>
+      <th scope="col">Prediction</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Date">7 Mar 2022</td>
+      <td data-label="Opponents">Bilbao - Levante</td>
+      <td data-label="League">Spanish: LaLiga</td>
+      <td data-label="Prediction">Over 2 goals</td>
+      <td data-label="Result"></td>
+    </tr>
+    <!-- <tr>
+      <td scope="row" data-label="Date">Visa - 3412</td>
+      <td data-label="Opponents">04/01/2016</td>
+      <td data-label="League">$1,190</td>
+      <td data-label="Prediction">03/01/2016 - 03/31/2016</td>
+      <td data-label="Result">Won</td>
+    </tr> -->
+  </tbody>
+</table>
 
-	<!-- /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */ -->
-	<script>
-	function openNav() {
+<!-- <div class="middle">
+		<div class="box box1">
+			<p class="bigCaption">Why we are <br>best in our<br>Town</p>
+			<p class="smallCaption">We have 5000+ Reviews and our Customers trust in our product. If you order more than $500 we can deliver free like express delivery</p>
+		</div>
+		<div class="box box2">
+
+			<img src="chair.png">
+			<p class="myText">Green chair <br>with metal
+				<br>
+				<br>
+				$36
+			</p>
+		</div>
+		<div class="box box3">
+			<img src="wood.png">
+			<p class="myText">Saguaro with <br>Wooden stand
+				<br>
+				<br>
+				$20
+			</p>
+		</div>
+		<div class="box box4">
+			<img src="vase.png">
+			<p class="myText">Corn tree with <br>Wooden rack
+				<br>
+				<br>
+				$10
+			</p>
+		</div>
+	</div> -->
+
+<div id="wrapper">
+	<!-- <div class="card pix">
+	    <img src="lagos.webp">
+	    <div class="element">
+	      <p>Lagos</p>
+	      <p class="tyu">9 Kilometres away</p>
+	    </div>
+	</div> -->
+
+	<div class="card pix">
+	    <img src="fourthball.jpg">
+	    <div class="element">
+	      <p>Buy Tips</p>
+	      <p class="tyu">We are giving free bets for 30 days to celebrate our launch. The free bet ends on April 6, 2022</p>
+	    </div>
+	</div>
+
+	<div class="card pix">
+	    <img src="ball.jpg">
+	    <div class="element">
+	      <p>Strong Win Rate</p>
+	      <p class="tyu">We aim at a over 80% win rate with high ROI. Huge percent of the tips are from the major European leagues</p>
+	    </div>
+	</div>
+	
+	<div class="card pix">
+	    <img src="secondball.jpg">
+	    <div class="element">
+	      <p>Excellent Support</p>
+	      <p class="tyu">We provide 24/7 fast support</p>
+	    </div>
+	</div>
+	
+	<div class="card pix">
+	    <img src="thirdball.jpg">
+	    <div class="element">
+	      <p>Secure Payments</p>
+	      <p class="tyu">We have flexible payment options for fiat and crypto payments </p>
+	    </div>
+	</div>
+</div>
+</main>
+
+<section id="myFaq">
+  <div class="faq">
+    <h1 class="bigCaption">Frequently Asked Questions</h1>
+    <!-- MY ACCORDION -->
+    <div class="myAccordion">
+      <button class="accordion">Which bookie do you recommend?</button>
+      <div class="panel"><br>
+        <p>We solely rely on professional bookies like Bet365, 1xbet, Bet9ja. Feel free to choose one of the previous mentioned ones, or the one your're more comfortable with.</p><br>
+      </div>
+    </div>
+    <div class="myAccordion">
+      <button class="accordion">What are the payment options?</button>
+      <div class="panel"><br>
+        <p>We aim for maximum flexibility from the customer's point of view, so you can pay via fiat or crypto</p><br>
+      </div>
+    </div>
+    <div class="myAccordion">
+      <button class="accordion">How fast will I receive your prediction?</button>
+      <div class="panel"><br>
+        <p>As fast as possible. After the payment has been confirmed, you will receive the prediction in your mailbox</p><br>
+      </div>
+    </div>
+    <div class="myAccordion">
+      <button class="accordion">What is your win rate?</button>
+      <div class="panel"><br>
+        <p>We aim at a 80% win rate and constantly working hard to improve our prediction system</p><br>
+      </div>
+    </div>
+    <div class="myAccordion">
+      <button class="accordion">What if I still have more questions?</button>
+      <div class="panel"><br>
+        <p>You can contact us. We will be glad to respond to your queries</p><br>
+      </div>
+    </div>
+    <!-- <div class="myAccordion last">
+      <button class="accordion">What can I watch on Netflix?</button>
+      <div class="panel"><br>
+        <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.</p><br>
+        <p>Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p><br>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+
+<script type="text/javascript" src="accordion.js"></script>
+<script type="text/javascript">
+	
+function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   // document.getElementsByClassName("sidenav")[0].style.display="block";
   document.getElementById("main").style.marginLeft = "250px";
@@ -197,7 +736,6 @@ function closeNav() {
 }
 
 
-
 // let closer = document.getElementById('myClose');
 let openbtn = document.getElementsByClassName('openbtn')[0];
 function bodyClose(e){
@@ -209,6 +747,7 @@ function bodyClose(e){
  window.addEventListener("click", bodyClose);
 
 
-	</script>
+
+</script>
 </body>
 </html>
